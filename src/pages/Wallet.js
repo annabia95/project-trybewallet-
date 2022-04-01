@@ -11,7 +11,7 @@ class Wallet extends React.Component {
   }
 
   render() {
-    /*     const { currencies } = this.props; */
+    const { currencies } = this.props;
     return (
       <div>
         <h1>TrybeWallet</h1>
@@ -28,7 +28,7 @@ class Wallet extends React.Component {
           <label htmlFor="currency">
             Moeda:
             <select id="currency" data-testid="currency-input">
-              <option>BRL</option>
+              { currencies.map((item) => <option key={ item }>{item}</option>) }
             </select>
           </label>
           <label htmlFor="payment">
@@ -57,7 +57,7 @@ class Wallet extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  currencies: state.currencies,
+  currencies: state.wallet.currencies,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -66,6 +66,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 Wallet.propTypes = {
   fetchAPIaction: PropTypes.func.isRequired,
-/*   currencies: PropTypes.arrayOf(PropTypes.string).isRequired, */
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
