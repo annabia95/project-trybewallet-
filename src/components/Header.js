@@ -15,13 +15,11 @@ class Header extends React.Component {
           {email}
         </span>
         <span data-testid="total-field">
-          {' '}
           {
             !totalExpenses
-              ? `Despesas: ${0}`
-              : `Despesas: ${totalExpenses.toFixed(2)}`
+              ? `${0}`
+              : `${totalExpenses.toFixed(2)}`
           }
-          {' '}
         </span>
         <span data-testid="header-currency-field">
           BRL
