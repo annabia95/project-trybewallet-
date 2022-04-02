@@ -35,6 +35,11 @@ class TableExpenses extends React.Component {
                   .ask) * exp.value).toFixed(2) }
               </td>
               <td>Real</td>
+              <td>
+                <button type="button" data-testid="delete-btn">
+                  Excluir
+                </button>
+              </td>
             </tr>
           )) }
         </tbody>
