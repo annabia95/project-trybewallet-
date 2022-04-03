@@ -14,6 +14,7 @@ class Header extends React.Component {
           Email:
           {email}
         </span>
+        <span>Despesas:</span>
         <span data-testid="total-field">
           {
             !totalExpenses

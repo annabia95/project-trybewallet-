@@ -1,12 +1,15 @@
 export const LOGIN = 'LOGIN';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const GET_EXPENSES = 'GET_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export const submitLogin = (user) => ({ type: LOGIN, user });// Coloque aqui suas actions
 
 export const getCurrencies = (currencies) => ({ type: GET_CURRENCIES, currencies });
 
 export const getExpenses = (expenses) => ({ type: GET_EXPENSES, expenses });
+
+export const deleteExpenses = (expenses) => ({ type: DELETE_EXPENSES, expenses });
 
 export const fetchAPI = () => async (dispatch) => {
   try {
