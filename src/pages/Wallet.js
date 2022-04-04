@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import '../components/HeaderStyle.css';
 import Header from '../components/Header';
 import { fetchAPI, fetchExpenses } from '../actions';
 import TableExpenses from '../components/TableExpenses';
+import './WalletStyle.css';
 
 class Wallet extends React.Component {
   constructor() {
@@ -47,10 +49,9 @@ class Wallet extends React.Component {
     const { currencies } = this.props;
     return (
       <div>
-        <h1>TrybeWallet</h1>
         <Header />
-        <form>
-          <label htmlFor="value">
+        <form className="form">
+          <label htmlFor="value" className="input-form">
             Valor:
             <input
               type="text"
@@ -59,9 +60,10 @@ class Wallet extends React.Component {
               name="value"
               value={ value }
               onChange={ this.handleChange }
+              className="input-value"
             />
           </label>
-          <label htmlFor="description">
+          <label htmlFor="description" className="input-form">
             Descrição:
             <input
               type="text"
@@ -70,9 +72,10 @@ class Wallet extends React.Component {
               name="description"
               value={ description }
               onChange={ this.handleChange }
+              className="input-value"
             />
           </label>
-          <label htmlFor="currency">
+          <label htmlFor="currency" className="input-form">
             Moeda:
             <select
               id="currency"
@@ -80,11 +83,12 @@ class Wallet extends React.Component {
               name="currency"
               value={ currency }
               onChange={ this.handleChange }
+              className="input-value"
             >
               { currencies.map((coin) => <option key={ coin }>{coin}</option>) }
             </select>
           </label>
-          <label htmlFor="payment">
+          <label htmlFor="payment" className="input-form">
             Método de pagamento:
             <select
               id="payment"
@@ -92,13 +96,14 @@ class Wallet extends React.Component {
               name="method"
               value={ method }
               onChange={ this.handleChange }
+              className="input-value"
             >
               <option>Dinheiro</option>
               <option>Cartão de crédito</option>
               <option>Cartão de débito</option>
             </select>
           </label>
-          <label htmlFor="tag">
+          <label htmlFor="tag" className="input-form">
             Tag:
             <select
               id="tag"
@@ -106,6 +111,7 @@ class Wallet extends React.Component {
               name="tag"
               value={ tag }
               onChange={ this.handleChange }
+              className="input-value"
             >
               <option>Alimentação</option>
               <option>Lazer</option>
@@ -114,7 +120,7 @@ class Wallet extends React.Component {
               <option>Saúde</option>
             </select>
           </label>
-          <button type="button" onClick={ this.sendExpensesToState }>
+          <button type="button" onClick={ this.sendExpensesToState } className="bttn-add">
             Adicionar despesa
           </button>
         </form>

@@ -1,0 +1,41 @@
+/* stylelint-disable length-zero-no-unit */
+.form {
+  align-items: center;
+  background-color: rgb(14, 14, 46);
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+.input-form {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-value {
+  font-size: 14px;
+  margin-left: 5px;
+  padding: 2px;
+  text-align: center;
+}
+
+.bttn-add {
+  border: 1px solid #d4d3e8;
+  border-radius: 26px;
+  box-shadow: 0px 2px 2px #5c5696;
+  color: #4c489d;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.bttn-add:hover {
+  border-color: #6a679e;
+  outline: none;
+}

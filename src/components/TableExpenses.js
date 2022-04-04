@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteExpenses } from '../actions';
+import './TableExpensesStyle.css';
 
 class TableExpenses extends React.Component {
   constructor() {
@@ -12,6 +13,7 @@ class TableExpenses extends React.Component {
   /* Referência para o slice(): https://www.w3schools.com/jsref/jsref_slice_array.asp */
   bttnDelete() {
     const { deleteExpensesAction, expenses } = this.props;
+    console.log(expenses.length);
     const remove = expenses.slice(1);
     return (deleteExpensesAction(remove));
   }
@@ -19,9 +21,8 @@ class TableExpenses extends React.Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
-        <table>
-          <caption>Minhas Despesas</caption>
+      <div className="table">
+        <table className="styled-table">
           <thead>
             <tr>
               <th>Descrição</th>
@@ -49,12 +50,19 @@ class TableExpenses extends React.Component {
                     .ask) * exp.value).toFixed(2) }
                 </td>
                 <td>Real</td>
-                <td>
+                <td className="last-line">
+                  <button
+                    type="button"
+                    data-testid="edit-btn"
+                    className="bttn-edit"
+                  >
+                    Editar despesa
+                  </button>
                   <button
                     type="button"
                     data-testid="delete-btn"
                     onClick={ () => this.bttnDelete() }
-
+                    className="bttn-delete"
                   >
                     Excluir
                   </button>
