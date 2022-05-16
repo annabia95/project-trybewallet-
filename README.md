@@ -20,6 +20,10 @@ Wallet Page 1             |  Wallet Page 2
 :-------------------------:|:-------------------------:
 ![Screeshot](screenshot_3.png)  |  ![Screenshot](screenshot_4.png)
 
+ ## Link para o deploy:
+ 
+ [TrybeWallet](https://project-trybewallet2.vercel.app/)<br>
+
 ## Habilidades Desenvolvidas
 
 Neste projeto, desenvolvi as seguintes habilidades:
